@@ -6,12 +6,22 @@ function App() {
   return (
     <>
       <h1>{number}</h1>
-      <input type="text" 
+
+      <h2 className = {number >= 0 ? "positive":"negative"} >
+        {number >= 0 ? "Positivo" : "Negativo"}
+      </h2>
+
+      <button className = "botão" onClick={()=>setNumber(number + 1)}>+</button>
+
+      <br />
+      <br />
+      <input 
+        type="number" 
         name="number" 
         value={number} 
-        onChange={(event) => setNumber(event.target.value)} 
+        onChange={(event) => setNumber(parseInt(event.target.value))} 
       />
-      <button className = "botão" onClick={()=>setNumber(number+1)}>+</button>
+      
     </>      
   );
 }
